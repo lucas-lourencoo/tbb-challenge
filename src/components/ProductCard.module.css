@@ -1,0 +1,12 @@
+.card {
+  background: #202024;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.info strong {
+  margin-bottom: 1rem;
+  display: inline-block;
+  font-size: 1.125rem;
+  line-height: 1.2;
+}
