@@ -1,52 +1,41 @@
-import { useEffect, useState } from "react";
 import { Product } from "../App";
-import { data } from "../data/data.json";
+import { data } from "../data/productsCategory.json";
+import styles from "./Filter.module.css";
 
 export type Category = {
   name: string;
-  id: string;
+  _id: string;
 };
 
 interface FilterInterface {
+  categories: Category[];
   setProducts: (value: Product[]) => void;
 }
 
-export function Filter({ setProducts }: FilterInterface) {
-  const [categories, setCategories] = useState([] as Category[]);
+export function Filter({ setProducts, categories }: FilterInterface) {
   const productsData = data.nodes as Product[];
 
-  useEffect(() => {
-    const categoriesOfProductsFiltered = new Map();
-
-    const categoriesOfProducts = productsData.map(
-      (product) => product.category
-    );
-
-    categoriesOfProducts.map((category) => {
-      if (!categoriesOfProductsFiltered.has(category)) {
-        categoriesOfProductsFiltered.set(category.id, category);
-      }
-    });
-
-    setCategories([...categoriesOfProductsFiltered.values()]);
-  }, []);
-
-  const filterProducts = (categoryId: string) => {
+  const filterProducts = (categoryName: string) => {
     const filteredProducts = productsData.filter(
-      (product) => product.category.id === categoryId
+      (product) => product.category.name === categoryName
     );
 
     setProducts(filteredProducts);
   };
 
   return (
-    <aside>
-      <h1>Filters</h1>
-      {categories.map((category) => (
-        <button key={category.id} onClick={() => filterProducts(category.id)}>
-          {category.name}
-        </button>
-      ))}
+    <aside className={styles.filtersContainer}>
+      <h1>Categories</h1>
+      <div className={styles.buttons}>
+        {categories.map((category) => (
+          <button
+            key={category.name}
+            onClick={() => filterProducts(category.name)}
+          >
+            {category.name}
+          </button>
+        ))}
+      </div>
     </aside>
   );
 }

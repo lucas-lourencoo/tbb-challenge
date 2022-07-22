@@ -1,0 +1,40 @@
+.filtersContainer h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons button {
+  cursor: pointer;
+  border: 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #283aa3;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.buttons button:hover {
+  filter: brightness(90%);
+}
+
+.buttons button + button {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .buttons button + button {
+    margin-top: 0;
+  }
+}

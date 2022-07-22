@@ -10,8 +10,6 @@
 }
 
 body {
-  background: #121214;
-  color: #c4c4cc;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -20,4 +18,10 @@ input,
 textarea,
 button {
   font: 400 1rem "Roboto", sans-serif;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
 }

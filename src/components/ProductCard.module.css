@@ -1,17 +1,39 @@
 .card {
-  background: #202024;
   border-radius: 8px;
   padding: 1rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 12rem;
+  margin-bottom: 1rem;
 }
 
 .info strong {
-  margin-bottom: 1rem;
   display: inline-block;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 1.2rem;
+  line-height: 1.1;
 }
 
 .info p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.4;
+  color: #424242;
+}
+
+.info span {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.info span svg {
+  margin-right: 0.5rem;
 }

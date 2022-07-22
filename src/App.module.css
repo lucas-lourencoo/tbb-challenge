@@ -1,5 +1,5 @@
 .container {
-  max-width: 70rem;
+  max-width: 72rem;
   margin: 2rem auto;
   padding: 0 1rem;
 
@@ -9,10 +9,17 @@
   align-items: flex-start;
 }
 
+.productsCards h2 {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
