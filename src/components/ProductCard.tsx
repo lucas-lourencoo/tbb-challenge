@@ -1,18 +1,5 @@
+import { Product } from "../App";
 import styles from "../components/ProductCard.module.css";
-
-type Product = {
-  id: string;
-  name: string;
-  shortDescription: string;
-  images: {
-    src: string;
-    alt: string;
-  }[];
-  category: {
-    id: string;
-    name: string;
-  };
-};
 
 interface ProductCardInterface {
   product: Product;

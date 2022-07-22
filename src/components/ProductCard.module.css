@@ -7,6 +7,11 @@
 .info strong {
   margin-bottom: 1rem;
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   line-height: 1.2;
+}
+
+.info p {
+  font-size: 1rem;
+  line-height: 1.4;
 }
